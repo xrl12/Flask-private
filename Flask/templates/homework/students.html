@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+    {% for stu in stus %}
+        <li>
+            <a href="/score/{{ stu.id }}">
+                {{ stu.name }}
+            </a>
+        </li>
+    {% endfor %}
+</body>
+</html>

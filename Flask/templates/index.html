@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+{% for happy in happys %}
+    爱好是：{{ happy | show}}
+{% endfor %}
+
+性别是：{{ gender }}
+名字是：{{ name }}
+
+
+</body>
+</html>

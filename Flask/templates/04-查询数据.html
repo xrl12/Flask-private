@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>查询数据</title>
+</head>
+<body>
+    {% for cat in cats %}
+        <div>
+            <a href="cat/{{ cat.id }}">{{ cat.name }}</a>
+        </div>
+    {% endfor %}
+</body>
+</html>

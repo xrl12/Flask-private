@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>英雄页</title>
+</head>
+<body>
+{% for hero in heroes %}
+    <li>
+    {{ hero.name }}
+    </li>
+{% endfor %}
+<form action="" method="post">
+    <input type="text" name="name">
+    <input type="hidden" value="{{ id }}" name="cate">
+    <input type="submit" value="提交">
+</form>
+</body>
+</html>

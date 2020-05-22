@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>班级表</title>
+</head>
+<body>
+    {% for classroom in classrooms %}
+        <li>
+            <a href="/classroom/{{ classroom.id }}">
+                {{ classroom.name }}
+            </a>
+        </li>
+    {% endfor %}
+</body>
+</html>

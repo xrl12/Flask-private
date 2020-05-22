@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闪现</title>
+</head>
+<body>
+<form action="" method="post">
+    {{ login.csrf_token }}　
+    <div>
+        {{ login.name.label }} : {{ login.name }}
+    </div>
+
+    <div>
+        {{ login.pwd.label }} : {{ login.pwd }}
+    </div>
+    <div>
+        {{ login.submit }}
+    </div>
+
+    {% for x in  get_flashed_messages(category_filter=['play']) %}
+        {{ x }}
+    {% endfor %}
+
+
+    {% for x in  get_flashed_messages(category_filter=['error']) %}
+        <h1>{{ x }}</h1>
+    {% endfor %}
+</form>
+</body>
+</html>

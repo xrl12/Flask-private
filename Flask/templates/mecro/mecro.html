@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>模板宏</title>
+</head>
+<body>
+{#    {% macro macro_input() %}#}
+{#        <input type="text">#}
+{#    {% endmacro %}#}
+{##}
+{#    {{ macro_input() }}#}
+
+{# 传参数 #}
+{#{% macro macro_input(type,value) %}#}
+{#    <input type={{ type }}, value={{ value }}>#}
+{#{% endmacro %}#}
+{##}
+{##}
+{#{{ macro_input('password','123') }}#}
+
+
+{# 宏的不定长参数 #}
+{#{% macro macro_input(type,val) %}#}
+{#    <input type= {{ type }}, value={{ val }}>#}
+{#    {{ varargs }}#}
+{#    {{ kwargs }}#}
+{#{% endmacro %}#}
+{##}
+{#{{ macro_input(type,123,'1231321321321','12321321',age=12) }}#}
+
+
+{# 导入宏 #}
+{#{% from 'mecro/macro_package.html' import macro_input %}#}
+{#{{ macro_input('password',123) }}#}
+
+{# 使用别名 #}
+{% from 'mecro/macro_package.html' import macro_input as input %}
+{{ input('text',123) }}
+</body>
+</html>

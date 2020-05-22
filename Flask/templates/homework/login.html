@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+</head>
+<body>
+<form action="" method="post">
+    <div>
+        {% if error %}
+            <span>{{ error }}<br /></span>
+        {% endif %}
+        手机号：<input type="text" name="acc">
+        密码：<input type="password" name="pwd">
+        <input type="submit" value="提交">
+    </div>
+</form>
+</body>
+</html>

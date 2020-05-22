@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    {{ login.csrf_token }}　
+    <div>
+        {% for msg in login.phone.errors %}
+            <p>{{ msg }}</p>
+        {% endfor %}
+        {{ login.phone.label }} : {{ login.phone }}
+    </div>
+    <div>
+        {{ login.pwd.label }} : {{ login.pwd }}
+    </div>
+
+    <div>
+        {{ login.pwd2.label }} : {{ login.pwd2 }}
+    </div>
+    {{ login.submit }}
+    <div>
+        {% for err in login.pwd2.errors %}
+            {{ err }}
+        {% endfor %}
+    </div>
+</form>
+</body>
+</html>

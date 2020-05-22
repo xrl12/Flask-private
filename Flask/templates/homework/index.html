@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>主页</title>
+</head>
+<body>
+{% if user %}
+    <h1>欢迎回来{{ user.name }}</h1>
+    <a href="/logout"> 退出</a>
+{% else %}
+    <a href="">登录</a>
+    <a href="">注册</a>
+{% endif %}
+
+<ul>
+    {% for cat in cats %}
+        <li>
+            <a href="cat/{{ cat.id }}">{{ cat.name }}</a>
+        </li>
+    {% endfor %}
+</ul>
+
+<form action="/addc" method="post">
+    <input type="text" name="cat">
+    <input type="submit">
+</form>
+</body>
+</html>
